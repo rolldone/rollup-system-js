@@ -1,0 +1,21 @@
+<html>
+
+<head>
+  <script type="systemjs-importmap" src="dist/import-map.json"></script>
+  <script type="text/javascript" src="dist/system/polyfill.js"></script>
+  <script type="text/javascript" src="dist/system/system.js"></script>
+  <script type="text/javascript" src="dist/system/extras/amd.js"></script>
+  <script type="text/javascript" src="dist/system/extras/named-exports.js"></script>
+</head>
+
+<body>
+  <h1>Wait a moment</h1>
+  <script>
+    System.import('Boot').then(async function (boot) {
+      let home = await boot.download('app::/home/app.js');
+      home.default();
+    });
+  </script>
+</body>
+
+</html>

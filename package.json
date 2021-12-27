@@ -1,0 +1,33 @@
+{
+  "name": "front",
+  "version": "1.0.0",
+  "description": "",
+  "main": "",
+  "scripts": {
+    "build": "rollup -c",
+    "watch": "rollup -c -w",
+    "build-test": "rollup -c && rollup -c"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/core": "^7.16.5",
+    "@babel/plugin-syntax-dynamic-import": "^7.8.3",
+    "@babel/preset-env": "^7.16.5",
+    "@rollup/plugin-json": "^4.1.0",
+    "babel-plugin-module-resolver": "^4.1.0",
+    "babel-preset-minify": "^0.5.1",
+    "rollup": "^2.35.1",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-copy": "^3.4.0",
+    "rollup-plugin-html": "^0.2.1",
+    "rollup-plugin-import-map": "^2.2.2",
+    "rollup-plugin-multi-input": "^1.1.1",
+    "rollup-plugin-scss": "^2.6.1",
+    "systemjs": "^6.11.0"
+  },
+  "devDependencies": {
+    "grunt-pot": "^0.3.0",
+    "rollup-plugin-notify": "^1.1.0"
+  }
+}
