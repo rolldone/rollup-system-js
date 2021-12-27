@@ -11,7 +11,7 @@ import path from 'path';
 
 let baseOut = 'example/dist';
 export default {
-  input: 'src/**/**/*',
+  input: 'src/**/**/*.js',
   plugins: [scss({
     // include: ["/**/*.css", "/**/*.scss", "/**/*.sass"],
     output: path.join(baseOut, "/css/style.css"),
