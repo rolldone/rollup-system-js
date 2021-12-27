@@ -1,4 +1,24 @@
-// import multiEntry from "rollup-plugin-multi-entry";
+## Description
+rollup-system-js. This is for easy use js module for develope on front area.
+
+```
+npm install
+npm run watch
+```
+## import-map.json
+Systemjs have config file import-map.json as base path smart import feature from systemjs. This basepath "dist" must following the path folder where is file compiled from load on index.html file.
+```
+{
+  "imports": {
+    "app::/": "/dist/",
+    "Boot": "/dist/Boot.js"
+  },
+  "scopes": {}
+}
+```
+## rollup.config.js
+It will compile and copy asset, config to dist folder
+```
 import notify from 'rollup-plugin-notify';
 import multiInput from 'rollup-plugin-multi-input';
 import babel from 'rollup-plugin-babel';
@@ -6,7 +26,6 @@ import html from "rollup-plugin-html";
 import json from '@rollup/plugin-json';
 import scss from 'rollup-plugin-scss';
 import copy from 'rollup-plugin-copy'
-import { rollupImportMapPlugin } from "rollup-plugin-import-map";
 import path from 'path';
 
 let baseOut = 'example/dist';
@@ -36,10 +55,17 @@ export default {
       { src: ['system'], dest: path.join(baseOut) }
     ]
   })
-    , multiInput(), html(), json()],
+  , multiInput(), html(), json()],
   output: {
     dir: path.join(baseOut),
     format: 'system',
     sourcemap: true,
   }
 }
+
+```
+For running example, install browser-sync first
+```
+npm install browser-sync -g
+cd example && browser-sync start --server
+```
